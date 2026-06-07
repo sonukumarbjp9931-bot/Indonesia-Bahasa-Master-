@@ -1,0 +1,345 @@
+/* Community and Multiplayer battle styles for BahasaMaster Indonesia */
+
+.social-tabs-nav {
+  display: flex;
+  gap: 15px;
+  border-bottom: 1px solid var(--color-card-border);
+  padding-bottom: 10px;
+  margin-bottom: 25px;
+}
+
+.social-tab-btn {
+  background: transparent;
+  border: none;
+  color: var(--color-text-secondary);
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition: all var(--transition-fast);
+}
+
+.social-tab-btn.active {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}
+
+/* --- 1. Multiplayer Battle --- */
+.battle-lobby-card {
+  text-align: center;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.lobby-matching-icon {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: rgba(6, 182, 212, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent);
+  position: relative;
+}
+
+.lobby-matching-spinner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 4px solid transparent;
+  border-top-color: var(--color-accent);
+  animation: spin 1.5s linear infinite;
+}
+
+/* Battle HUD layout */
+.battle-hud {
+  display: grid;
+  grid-template-columns: 1fr 120px 1fr;
+  align-items: center;
+  gap: 20px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--border-radius-md);
+  padding: 20px;
+  margin-bottom: 25px;
+}
+
+.battle-hud-player {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.hud-profile {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hud-name {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1rem;
+}
+
+.hud-uni {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.hud-progress-bg {
+  width: 100%;
+  height: 12px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--border-radius-full);
+  overflow: hidden;
+  margin-top: 6px;
+}
+
+.hud-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--color-primary);
+  transition: width 0.3s;
+}
+
+.hud-progress-fill.opponent {
+  background: var(--color-secondary);
+}
+
+.hud-versus {
+  text-align: center;
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.battle-feed {
+  background: rgba(0,0,0,0.15);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--border-radius-sm);
+  padding: 10px 15px;
+  font-size: 0.8rem;
+  color: var(--color-accent);
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+/* --- 2. Forum Boards --- */
+.forum-split-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 25px;
+}
+
+@media (max-width: 900px) {
+  .forum-split-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.forum-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.forum-card {
+  padding: 24px;
+}
+
+.forum-card-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-bottom: 10px;
+}
+
+.forum-card-author {
+  font-weight: 700;
+  color: var(--color-text-secondary);
+}
+
+.forum-card-title {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: var(--color-text-primary);
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.forum-card-title:hover {
+  color: var(--color-primary);
+}
+
+.forum-card-body {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  margin-bottom: 18px;
+}
+
+.forum-card-actions {
+  display: flex;
+  gap: 20px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  padding-top: 12px;
+  font-size: 0.85rem;
+}
+
+.forum-action-btn {
+  background: transparent;
+  border: none;
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-family: var(--font-primary);
+  font-weight: 600;
+}
+
+.forum-action-btn:hover {
+  color: var(--color-primary);
+}
+
+/* Forum dialog/detail card styling */
+.forum-detail-post {
+  border-bottom: 1px solid var(--color-card-border);
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.forum-replies-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-height: 250px;
+  overflow-y: auto;
+  margin-bottom: 20px;
+}
+
+.reply-item-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--color-card-border);
+  padding: 12px 16px;
+  border-radius: var(--border-radius-sm);
+  font-size: 0.85rem;
+}
+
+.reply-item-header {
+  display: flex;
+  justify-content: space-between;
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+  margin-bottom: 6px;
+}
+
+/* --- 3. Study Groups --- */
+.group-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.group-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.group-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.group-member-count {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.group-card-name {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.15rem;
+}
+
+.group-card-desc {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+}
+
+/* Group Chat Dialog overlay styling */
+.group-chat-box {
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+  background: rgba(0,0,0,0.1);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--border-radius-md);
+  padding: 15px;
+}
+
+.group-chat-msg-list {
+  flex-grow: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.group-chat-bubble {
+  background: var(--color-surface);
+  border: 1px solid var(--color-card-border);
+  padding: 10px 14px;
+  border-radius: var(--border-radius-sm);
+  align-self: flex-start;
+  max-width: 80%;
+  font-size: 0.85rem;
+}
+
+.group-chat-bubble.mine {
+  align-self: flex-end;
+  background: rgba(225, 29, 72, 0.1);
+  border-color: var(--color-primary);
+}
+
+.group-chat-bubble-author {
+  font-weight: 800;
+  font-size: 0.75rem;
+  color: var(--color-accent);
+  margin-bottom: 4px;
+}
+
+.group-chat-bubble.mine .group-chat-bubble-author {
+  color: var(--color-primary);
+}
+
+/* Animations */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
